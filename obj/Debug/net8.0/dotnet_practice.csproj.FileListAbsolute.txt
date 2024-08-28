@@ -1,0 +1,14 @@
+I:\dotnet_practice\bin\Debug\net8.0\dotnet_practice.exe
+I:\dotnet_practice\bin\Debug\net8.0\dotnet_practice.deps.json
+I:\dotnet_practice\bin\Debug\net8.0\dotnet_practice.runtimeconfig.json
+I:\dotnet_practice\bin\Debug\net8.0\dotnet_practice.dll
+I:\dotnet_practice\bin\Debug\net8.0\dotnet_practice.pdb
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.GeneratedMSBuildEditorConfig.editorconfig
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.AssemblyInfoInputs.cache
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.AssemblyInfo.cs
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.csproj.CoreCompileInputs.cache
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.dll
+I:\dotnet_practice\obj\Debug\net8.0\refint\dotnet_practice.dll
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.pdb
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.genruntimeconfig.cache
+I:\dotnet_practice\obj\Debug\net8.0\ref\dotnet_practice.dll
