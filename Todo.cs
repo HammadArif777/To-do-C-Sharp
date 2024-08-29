@@ -58,6 +58,11 @@ namespace Container_1
         }
         public void EditTodo()
         {
+            foreach (TodoItem obj in todos)
+            {
+                Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
+
+            }
             Console.WriteLine("Enter ID to edit:");
             int editId = Convert.ToInt32(Console.ReadLine());
             foreach (TodoItem item in todos)
@@ -95,10 +100,6 @@ namespace Container_1
         {
             this.todos.Clear();
             Console.WriteLine("All Items have been cleared.");
-        }
-        public void ClearScreen()
-        {
-            Console.Clear();
         }
     }
 
@@ -141,7 +142,8 @@ namespace Container_1
                         todos.ClearAllTodo();
                         break;
                     case 5:
-                        todos.ClearScreen();
+                    Console.Clear();
+                        // todos.ClearScreen();
                         break;
                     case 6 : 
                     todos.EditTodo();
