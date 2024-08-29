@@ -51,9 +51,30 @@ namespace Container_1
                 {
                     this.todos.Remove(item);
                     Console.WriteLine("Item deleted successfully.");
-                    break;
+                    return;
                 }
             }
+            Console.WriteLine("id does not exists.");
+        }
+        public void EditTodo()
+        {
+            Console.WriteLine("Enter ID to edit:");
+            int editId = Convert.ToInt32(Console.ReadLine());
+            foreach (TodoItem item in todos)
+            {
+                    if(item.id == editId)
+                        {
+            Console.WriteLine("Enter title:");
+            string title = Console.ReadLine();
+            Console.WriteLine("Enter Description:");
+            string description = Console.ReadLine();
+                       item.title = title;
+                       item.description = description;
+                       Console.WriteLine("Item has been edited successfully.");
+                       return; 
+                        }
+            }
+            Console.WriteLine("ID does not exists.");
         }
         public void DisplayTodo()
         {
@@ -94,7 +115,8 @@ namespace Container_1
             Console.WriteLine($"3- Display Todo");
             Console.WriteLine($"4- Clear All Todo");
             Console.WriteLine($"5- Clear Screen");
-            Console.WriteLine($"6- Exit");
+            Console.WriteLine($"6- Edit Todo");
+            Console.WriteLine($"7- Exit");
             Console.WriteLine($"Please select your choice");
         }
         public static void ChoiceLogic(TodoList todos)
@@ -121,7 +143,10 @@ namespace Container_1
                     case 5:
                         todos.ClearScreen();
                         break;
-                    case 6:
+                    case 6 : 
+                    todos.EditTodo();
+                    break;
+                    case 7:
                         return;
                     default:
                         Console.WriteLine("Invalid Input");
@@ -139,6 +164,7 @@ namespace Container_1
         {
 
             MainLogic();
+
         }
     }
 }

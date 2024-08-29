@@ -12,3 +12,4 @@ I:\dotnet_practice\obj\Debug\net8.0\refint\dotnet_practice.dll
 I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.pdb
 I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.genruntimeconfig.cache
 I:\dotnet_practice\obj\Debug\net8.0\ref\dotnet_practice.dll
+I:\dotnet_practice\obj\Debug\net8.0\dotnet_practice.sourcelink.json
