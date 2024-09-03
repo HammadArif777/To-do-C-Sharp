@@ -1,172 +1,171 @@
 
-using System.Collections;
+// using System.Collections;
 
-namespace Container_1
-{
+// namespace Container_1
+// {
 
-    class TodoItem
-    {
-        public int id = 0;
-        public string title;
-        public string description;
-        public TodoItem(string title, string description)
-        {
-            Random random = new Random();
-            id = random.Next(0, 1000);
-            this.title = title;
-            this.description = description;
-        }
-    }
-    class TodoList
-    {
+//     class TodoItem
+//     {
+//         public int id = 0;
+//         public string title;
+//         public string description;
+//         public TodoItem(string title, string description)
+//         {
+//             Random random = new Random();
+//             id = random.Next(0, 1000);
+//             this.title = title;
+//             this.description = description;
+//         }
+//     }
 
-        ArrayList todos;
-        public TodoList()
-        {
-            todos = new ArrayList();
-        }
-        public void AddTodo()
-        {
-            string title = string.Empty;
-            string description = string.Empty;
-            Console.WriteLine("Enter title:");
-            title = Console.ReadLine();
-            Console.WriteLine("Enter Description:");
-            description = Console.ReadLine();
-            TodoItem item = new TodoItem(title, description);
-            todos.Add(item);
-        }
-        public void DeleteTodo()
-        {
-            foreach (TodoItem obj in todos)
-            {
-                Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
+//     class TodoList
+//     {
 
-            }
-            Console.WriteLine("Enter id to delete:");
-            int id = Convert.ToInt32(Console.ReadLine());
-            foreach (TodoItem item in todos)
-            {
-                if (item.id == id)
-                {
-                    this.todos.Remove(item);
-                    Console.WriteLine("Item deleted successfully.");
-                    return;
-                }
-            }
-            Console.WriteLine("id does not exists.");
-        }
-        public void EditTodo()
-        {
-            foreach (TodoItem obj in todos)
-            {
-                Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
+//         ArrayList todos;
+//         public TodoList()
+//         {
+//             todos = new ArrayList();
+//         }
+//         public void AddTodo()
+//         {
+//             string title = string.Empty;
+//             string description = string.Empty;
+//             Console.WriteLine("Enter title:");
+//             title = Console.ReadLine();
+//             Console.WriteLine("Enter Description:");
+//             description = Console.ReadLine();
+//             TodoItem item = new TodoItem(title, description);
+//             todos.Add(item);
+//         }
+//         public void DeleteTodo()
+//         {
+//             foreach (TodoItem obj in todos)
+//             {
+//                 Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
 
-            }
-            Console.WriteLine("Enter ID to edit:");
-            int editId = Convert.ToInt32(Console.ReadLine());
-            foreach (TodoItem item in todos)
-            {
-                    if(item.id == editId)
-                        {
-            Console.WriteLine("Enter title:");
-            string title = Console.ReadLine();
-            Console.WriteLine("Enter Description:");
-            string description = Console.ReadLine();
-                       item.title = title;
-                       item.description = description;
-                       Console.WriteLine("Item has been edited successfully.");
-                       return; 
-                        }
-            }
-            Console.WriteLine("ID does not exists.");
-        }
-        public void DisplayTodo()
-        {
-            if (todos.Count > 0)
-            {
-                foreach (TodoItem obj in todos)
-                {
-                    Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"List is currently empty.");
-            }
+//             }
+//             Console.WriteLine("Enter id to delete:");
+//             int id = Convert.ToInt32(Console.ReadLine());
+//             foreach (TodoItem item in todos)
+//             {
+//                 if (item.id == id)
+//                 {
+//                     this.todos.Remove(item);
+//                     Console.WriteLine("Item deleted successfully.");
+//                     return;
+//                 }
+//             }
+//             Console.WriteLine("id does not exists.");
+//         }
+//         public void EditTodo()
+//         {
+//             foreach (TodoItem obj in todos)
+//             {
+//                 Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
 
-        }
-        public void ClearAllTodo()
-        {
-            this.todos.Clear();
-            Console.WriteLine("All Items have been cleared.");
-        }
-    }
+//             }
+//             Console.WriteLine("Enter ID to edit:");
+//             int editId = Convert.ToInt32(Console.ReadLine());
+//             foreach (TodoItem item in todos)
+//             {
+//                     if(item.id == editId)
+//                         {
+//             Console.WriteLine("Enter title:");
+//             string title = Console.ReadLine();
+//             Console.WriteLine("Enter Description:");
+//             string description = Console.ReadLine();
+//                        item.title = title;
+//                        item.description = description;
+//                        Console.WriteLine("Item has been edited successfully.");
+//                        return; 
+//                         }
+//             }
+//             Console.WriteLine("ID does not exists.");
+//         }
+//         public void DisplayTodo()
+//         {
+//             if (todos.Count > 0)
+//             {
+//                 foreach (TodoItem obj in todos)
+//                 {
+//                     Console.WriteLine($"ID:{obj.id} Title:{obj.title}, Description:{obj.description}");
+//                 }
+//             }
+//             else
+//             {
+//                 Console.WriteLine($"List is currently empty.");
+//             }
 
-    class MainClass
-    {
-        public static void WelcomeMessage()
-        {
-            Console.WriteLine($"*** Welcome to TO-DO List ***");
-        }
-        public static void Menu()
-        {
-            Console.WriteLine($"1- Add Todo");
-            Console.WriteLine($"2- Delete Todo");
-            Console.WriteLine($"3- Display Todo");
-            Console.WriteLine($"4- Clear All Todo");
-            Console.WriteLine($"5- Clear Screen");
-            Console.WriteLine($"6- Edit Todo");
-            Console.WriteLine($"7- Exit");
-            Console.WriteLine($"Please select your choice");
-        }
-        public static void ChoiceLogic(TodoList todos)
-        {
-            do
-            {
-                WelcomeMessage();
-                Menu();
-                int choice = Convert.ToInt32(Console.ReadLine());
-                switch (choice)
-                {
-                    case 1:
-                        todos.AddTodo();
-                        break;
-                    case 2:
-                        todos.DeleteTodo();
-                        break;
-                    case 3:
-                        todos.DisplayTodo();
-                        break;
-                    case 4:
-                        todos.ClearAllTodo();
-                        break;
-                    case 5:
-                    Console.Clear();
-                        // todos.ClearScreen();
-                        break;
-                    case 6 : 
-                    todos.EditTodo();
-                    break;
-                    case 7:
-                        return;
-                    default:
-                        Console.WriteLine("Invalid Input");
-                        return;
-                }
-            } while (true);
+//         }
+//         public void ClearAllTodo()
+//         {
+//             this.todos.Clear();
+//             Console.WriteLine("All Items have been cleared.");
+//         }
+//     }
 
-        }
-        public static void MainLogic()
-        {
-            TodoList todos = new TodoList();
-            ChoiceLogic(todos);
-        }
-        public static void Main()
-        {
+//     class MainClass
+//     {
+//         public static void WelcomeMessage()
+//         {
+//             Console.WriteLine($"*** Welcome to TO-DO List ***");
+//         }
+//         public static void Menu()
+//         {
+//             Console.WriteLine($"1- Add Todo");
+//             Console.WriteLine($"2- Delete Todo");
+//             Console.WriteLine($"3- Display Todo");
+//             Console.WriteLine($"4- Clear All Todo");
+//             Console.WriteLine($"5- Clear Screen");
+//             Console.WriteLine($"6- Edit Todo");
+//             Console.WriteLine($"7- Exit");
+//             Console.WriteLine($"Please select your choice");
+//         }
+//         public static void ChoiceLogic(TodoList todos)
+//         {
+//             do
+//             {
+//                 WelcomeMessage();
+//                 Menu();
+//                 int choice = Convert.ToInt32(Console.ReadLine());
+//                 switch (choice)
+//                 {
+//                     case 1:
+//                         todos.AddTodo();
+//                         break;
+//                     case 2:
+//                         todos.DeleteTodo();
+//                         break;
+//                     case 3:
+//                         todos.DisplayTodo();
+//                         break;
+//                     case 4:
+//                         todos.ClearAllTodo();
+//                         break;
+//                     case 5:
+//                     Console.Clear();
+//                         // todos.ClearScreen();
+//                         break;
+//                     case 6 : 
+//                     todos.EditTodo();
+//                     break;
+//                     case 7:
+//                         return;
+//                     default:
+//                         Console.WriteLine("Invalid Input");
+//                         return;
+//                 }
+//             } while (true);
 
-            MainLogic();
-
-        }
-    }
-}
+//         }
+//         public static void MainLogic()
+//         {
+//             TodoList todos = new TodoList();
+//             ChoiceLogic(todos);
+//         }
+//         public static void Main()
+//         {
+//             MainLogic();
+//         }
+//     }
+// }
